@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <xacro:property name="D455_front_offset_x" value="0"/>
+    <xacro:property name="D455_front_offset_y" value="0"/>
+    <xacro:property name="D455_front_offset_z" value="0.22"/>
+
+    <xacro:property name="D455_back_offset_x" value="0.7"/>
+    <xacro:property name="D455_back_offset_y" value="0"/>
+    <xacro:property name="D455_back_offset_z" value="0.22"/>
+
+    <xacro:property name="D455_left_offset_x" value="0.4"/>
+    <xacro:property name="D455_left_offset_y" value="0.17"/>
+    <xacro:property name="D455_left_offset_z" value="0.22"/>
+
+    <xacro:property name="D455_right_offset_x" value="0.4"/>
+    <xacro:property name="D455_right_offset_y" value="-0.17"/>
+    <xacro:property name="D455_right_offset_z" value="0.22"/>
+
+    <joint name="D455_front_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="D455_front_joint_link"/>
+        <origin xyz="${D455_front_offset_x} ${D455_front_offset_y} ${D455_front_offset_z}" rpy="0 0 ${pi/2}"/>
+    </joint>
+
+    <joint name="D455_back_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="D455_back_joint_link"/>
+        <origin xyz="${D455_back_offset_x} ${D455_back_offset_y} ${D455_back_offset_z}" rpy="0 0 ${-pi/2}"/>
+    </joint>
+
+    <joint name="D455_left_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="D455_left_joint_link"/>
+        <origin xyz="${D455_left_offset_x} ${D455_left_offset_y} ${D455_left_offset_z}" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="D455_right_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="D455_right_joint_link"/>
+        <origin xyz="${D455_right_offset_x} ${D455_right_offset_y} ${D455_right_offset_z}" rpy="0 0 ${-pi}"/>
+    </joint>
+
+
+    <link name="D455_front_joint_link">
+        <visual>
+            <origin xyz="0 0.01 0" rpy="${-pi/2} ${pi} 0"/>
+            <geometry>
+<!--                <box size="0.124 0.030 0.036"/>-->
+                <mesh filename="package://nvidia-carter/description/meshes/realsense.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+    </link>
+    <link name="D455_back_joint_link">
+        <visual>
+            <origin xyz="0 0.01 0" rpy="${-pi/2} ${pi} 0"/>
+            <geometry>
+                <!--                <box size="0.124 0.030 0.036"/>-->
+                <mesh filename="package://nvidia-carter/description/meshes/realsense.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+    </link>
+    <link name="D455_left_joint_link">
+        <visual>
+            <origin xyz="0 0.01 0" rpy="${-pi/2} ${pi} 0"/>
+            <geometry>
+                <!--                <box size="0.124 0.030 0.036"/>-->
+                <mesh filename="package://nvidia-carter/description/meshes/realsense.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+    </link>
+    <link name="D455_right_joint_link">
+        <visual>
+            <origin xyz="0 0.01 0" rpy="${-pi/2} ${pi} 0"/>
+            <geometry>
+                <!--                <box size="0.124 0.030 0.036"/>-->
+                <mesh filename="package://nvidia-carter/description/meshes/realsense.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <material name="green"/>
+        </visual>
+    </link>
+
+
+
+
+
+
+
+</robot>
